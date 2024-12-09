@@ -110,6 +110,36 @@ The program emits events for key actions, allowing clients or frontends to track
 - Dynamically adjust fees and mitigate impermanent loss to ensure fair and sustainable operation.
 
   
+## Solana Defi Flow vs https://github.com/btorressz/DefiFlow 
+
+# Comparison: solana_defi_flow vs DefiFlow(eth) smart contract
+
+## Similarities:
+- **Core Logic**: Both handle liquidity management, token swaps, and impermanent loss mitigation. Users can provide/remove liquidity and swap tokens.
+- **Fee Mechanism**: Both apply a fee on swaps, calculated in basis points (e.g., 0.25% in Solana).
+- **Reward Distribution**: Liquidity providers (LPs) are rewarded, with Solana minting tokens for rewards.
+- **Event Emissions**: Both emit events for key actions like adding/removing liquidity, performing swaps, and adjusting fees.
+- **Dynamic Parameter Adjustment**: Both adjust fees dynamically, with Solana responding to market volatility.
+- **Impermanent Loss Mitigation**: Both mitigate impermanent loss using price oracles (Pyth for Solana, Chainlink for Ethereum).
+
+## Differences:
+- **Language & Framework**: Solana uses Rust and the Anchor framework, while Ethereum uses Solidity and libraries like OpenZeppelin.
+- **Token Standards**: Solana uses SPL tokens (via Anchor SPL), while Ethereum uses ERC-20 tokens.
+- **Price Oracles**: Solana uses Pyth for real-time data; Ethereum uses Chainlink.
+- **Transaction Execution Model**: Solana is faster and cheaper with Proof of History (PoH), while Ethereum relies on Proof of Stake (PoS) with higher gas fees.
+- **Context & Accounts**: In Anchor, contexts are defined using structs for account management; in Solidity, state is managed internally within the contract.
+- **Events Emission**: Anchor uses `emit!()` for events; Solidity uses `emit`.
+- **Fee Adjustments**: Solana adjusts fees based on volatility thresholds, while Ethereum may adjust based on external factors or governance.
+- **Account Management**: Solana checks permissions through user accounts and signatures; Ethereum uses modifiers like `onlyOwner`.
+
+ ## NOTE : I enjoyed every second developing this project and would love feedback if neccessary :) 
+
+ ## License 
+ - This project is under the **MIT LICENSE**
+ 
+
+
+
 
 
 
